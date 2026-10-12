@@ -251,7 +251,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2899251667384605910, guid: b397af778c2bd8048922eedc768064ac, type: 3}
   m_PrefabInstance: {fileID: 1162409904928617429}
   m_PrefabAsset: {fileID: 0}
---- !u!143 &594855498
+--- !u!143 &594855497
 CharacterController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -276,6 +276,22 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1.22, z: 0.06}
+--- !u!114 &594855498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594855496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccb09ccaa28bcf248910884b95d62e4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerManager
+  groundedPlayer: 0
+  playerSpeed: 3
+  jumpHeight: 1
+  gravityValue: -9.81
 --- !u!1 &961739749
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,7 +373,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -578,10 +594,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2899251667384605910, guid: b397af778c2bd8048922eedc768064ac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2899251667384605910, guid: b397af778c2bd8048922eedc768064ac, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 594855497}
     - targetCorrespondingSourceObject: {fileID: 2899251667384605910, guid: b397af778c2bd8048922eedc768064ac, type: 3}
       insertIndex: -1
       addedObject: {fileID: 594855498}
