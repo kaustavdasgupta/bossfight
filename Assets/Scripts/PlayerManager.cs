@@ -15,6 +15,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private float jumpHeight = 1.0f;
     [SerializeField] private float gravityValue = -9.81f;
     [SerializeField] private float rotationSpeed = 10f;
+    [SerializeField] private bool playerReady = false;
 
     private void Awake()
     {
@@ -68,9 +69,20 @@ public class PlayerManager : MonoBehaviour
 
     private void PlayerAnimationController()
     {
-        if(Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
+        if (controller.isGrounded && !playerReady)
+            playerReady = true;
+
+        if (!playerReady)
+            return;
+
+        if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
             playerAnim.SetBool("isWalking", true);
         else
             playerAnim.SetBool("isWalking", false);
+
+        if (groundedPlayer)
+            playerAnim.SetBool("isJumping", false);
+        else
+            playerAnim.SetBool("isJumping", true);
     }
 }
